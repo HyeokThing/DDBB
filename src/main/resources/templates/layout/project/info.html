@@ -34,7 +34,7 @@
             <input type="hidden" id="modifyTitle" name="title" th:value="${project.title}">
             <input type="hidden" id="modifyIntroduction" name="introduction" th:value="${project.introduction}">
             <input type="hidden" id="modifyLeaderYn" name="leaderYn" th:value="${project.leaderYn}" />
-            <button class="btn btn-outline-secondary ms-2" type="submit">수정</button>
+            <button class="btn btn-outline-secondary ms-2" th:if="${projectMemberVO.isLeaderYn()==true}" type="submit">수정</button>
           </form>
           <form id="deleteForm" th:action="@{/project/delete}" method="post" class="ms-2">
             <input type="hidden" id="deleteProjectId" name="projectId" th:value="${project.projectId}" />
