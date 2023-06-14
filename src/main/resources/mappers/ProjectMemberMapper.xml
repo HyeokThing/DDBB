@@ -15,7 +15,8 @@
         SELECT name, leader_yn
         FROM member m, project_member pm
         WHERE m.member_id = pm.member_id
-        AND pm.project_id = #{project_id};
+        AND pm.project_id = #{project_id}
+        ORDER BY leader_yn DESC;
     </select>
 
     <!-- 프로젝트 참여자 등록 -->
@@ -43,6 +44,7 @@
         <include refid="projectMemberColumns" />
         FROM project_member
         WHERE member_id = #{memberId}
-          AND project_id = #{projectId}
+          AND project_id = #{projectId};
+
     </select>
 </mapper>
