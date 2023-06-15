@@ -120,8 +120,8 @@
           <input type="hidden" id="commentUpdateProjectId" name="projectId" th:value="${project.projectId}"/>
           <textarea type="text" name="content" class="edit-input" style="display: none;"></textarea>
           <div class="comment_container">
-          <button class="save-button" style="display: none;">저장</button>
-          <button class="cancel-button" style="display: none;">취소</button>
+          <button class="save-button" style="display: none;">Save</button>
+          <button class="cancel-button" style="display: none;">Delete</button>
           </div>
         </form>
         <form id="commentDeleteForm" th:action="@{/commentDelete}" method="post">
@@ -192,12 +192,12 @@
     document.getElementById("deleteModal").addEventListener("click", closeModalByClickBackground);
     document.getElementById("addModal").addEventListener("click", closeModalByClickBackground);
     function confirmDelete() {
-      if (confirm("정말 삭제하시겠습니까?")) {
+      if (confirm("Are you sure you want to delete it?")) {
         document.getElementById("deleteForm").submit();
       }
     }
     function confirmDeleteComment(commentId) {
-      if (confirm("정말 삭제하시겠습니까?")) {
+      if (confirm("Are you sure you want to delete it?")) {
         document.getElementById("commentDeleteCommentId").value = commentId;
         document.getElementById("commentDeleteForm").submit();
       }
