@@ -26,21 +26,21 @@
         <h4 class="project_title" th:text="${project.title}"></h4>
         <div class="d-flex align-items-center">
           <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            자세히보기
+            Zoom In
           </button>
           <form id="modifyForm" th:action="@{/project/modify}" method="get" style="flex: 1;">
             <input type="hidden" id="modifyProjectId" name="projectId" th:value="${project.projectId}" />
             <input type="hidden" id="modifyTitle" name="title" th:value="${project.title}">
             <input type="hidden" id="modifyIntroduction" name="introduction" th:value="${project.introduction}">
             <input type="hidden" id="modifyLeaderYn" name="leaderYn" th:value="${project.leaderYn}" />
-            <button class="btn btn-outline-secondary ms-2" th:if="${projectMemberVO.isLeaderYn()==true}" type="submit">수정</button>
+            <button class="btn btn-outline-secondary ms-2" th:if="${projectMemberVO.isLeaderYn()==true}" type="submit">Modify</button>
           </form>
           <form id="deleteForm" th:action="@{/project/delete}" method="post" class="ms-2">
             <input type="hidden" id="deleteProjectId" name="projectId" th:value="${project.projectId}"/>
-            <button th:if="${projectMemberVO.isLeaderYn()==true}" class="btn btn-danger" type="button" onclick="confirmDelete(this)">삭제</button>
+            <button th:if="${projectMemberVO.isLeaderYn()==true}" class="btn btn-danger" type="button" onclick="confirmDelete(this)">Delete</button>
           </form>
         </div>
-        <p>프로젝트 소개: <span th:text="${project.introduction}"></span></p>
+        <p>Project Introduce: <span th:text="${project.introduction}"></span></p>
       </div>
     </div>
     <div class="content_box project_members" id="project_members" >
@@ -80,9 +80,9 @@
         <span class="close" onclick="closeAddModal()">&times;</span>
         <form id="addMemberForm" th:action="@{/projectMember/add}" method="post">
           <input type="hidden" id="addProjectMemberProjectId" name="projectId" th:value="${project.projectId}"/>
-          <label for="addId">아이디 : </label>
+          <label for="addId">Id : </label>
           <input type="text" id="addId" name="addId"/><br><br>
-          <button class="add_member" name="addMember" type="submit">추가</button>
+          <button class="add_member" name="addMember" type="submit">Add</button>
         </form>
       </div>
     </div>
@@ -91,9 +91,9 @@
         <span class="close" onclick="closeDeleteModal()">&times;</span>
         <form id="deleteMemberForm" th:action="@{/projectMember/delete}" method="post">
           <input type="hidden" id="deleteProjectMemberProjectId" name="projectId" th:value="${project.projectId}"/>
-          <label for="deleteId">아이디  </label>
+          <label for="deleteId">Id : </label>
           <input type="text" id="deleteId" name="deleteId"/><br><br>
-          <button class="del_member" name="addMember" type="submit">제거</button>
+          <button class="del_member" name="addMember" type="submit">Delete</button>
         </form>
       </div>
     </div>
@@ -106,7 +106,7 @@
       <form id="InsertCodeForm" action="/codeInsertPage" method="post">
         <input type="hidden" id="projectIdForCode" name="projectId" />
       </form>
-      <button class="btn btn-outline-secondary btn_regist ms-2" type="button" th:onclick="|javascript:goToInsertCode()|">코드 등록</button>
+      <button class="btn btn-outline-secondary btn_regist ms-2" type="button" th:onclick="|javascript:goToInsertCode()|">Add Code</button>
     </div>
 
     <div class="content_box project_comment">
@@ -147,7 +147,7 @@
     <form id="addCommentForm" action="/commentSavePage" method="post">
       <input type="hidden" id="projectIdForComment" name="projectId" />
     </form>
-    <button class="btn btn-outline-secondary btn_regist ms-2" type="button" th:onclick="|javascript:goToAddComment()|">등록</button>
+    <button class="btn btn-outline-secondary btn_regist ms-2" type="button" th:onclick="|javascript:goToAddComment()|">Add Comment</button>
   </div>
   <script>
     $(function() {
