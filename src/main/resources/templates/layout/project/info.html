@@ -26,7 +26,7 @@
         <h4 class="project_title" th:text="${project.title}"></h4>
         <div class="d-flex align-items-center">
           <button type="button" class="btn btn-primary ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Zoom In
+            Read More
           </button>
           <form id="modifyForm" th:action="@{/project/modify}" method="get" style="flex: 1;">
             <input type="hidden" id="modifyProjectId" name="projectId" th:value="${project.projectId}" />
