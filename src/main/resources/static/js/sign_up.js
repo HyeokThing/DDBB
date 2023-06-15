@@ -37,7 +37,7 @@ function validatePassword() {
   var check = true;
   if(password !== passwordCheck){
     document.getElementById("passwordError").innerHTML="";
-    document.getElementById("passwordCheckError").innerHTML="비밀번호가 동일하지 않습니다.";
+    document.getElementById("passwordCheckError").innerHTML="Password is not the same.";
     check = false;
   }else{
     document.getElementById("passwordError").innerHTML="";

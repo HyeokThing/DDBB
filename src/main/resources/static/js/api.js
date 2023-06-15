@@ -31,9 +31,9 @@ var api = {
             success: function(result){
                 let msg;
                 if(result!=""){
-                    msg = "ID는: "+result+"입니다.";
+                    msg = "Your ID : "+result;
                 }else{
-                    msg = "조회되는 정보가 없습니다."
+                    msg = "No information is being inquired."
                 }
                 alert(msg);
             },
@@ -55,9 +55,9 @@ var api = {
             success: function(result){
                 let msg;
                 if(result == false){
-                    msg = "이 ID는 사용가능 합니다.";
+                    msg = "This Id is possible.";
                 }else if(result == true){
-                    msg = "이 ID는 사용이 불가능합니다.";
+                    msg = "This Id is not available.";
                 }
                 alert(msg);
             },
@@ -79,9 +79,9 @@ var api = {
             success: function(result){
                 let msg;
                 if(result == false){
-                    msg = "이 이메일은 사용가능 합니다.";
+                    msg = "This Email is possible.";
                 }else if(result == true){
-                    msg = "이 이메일은 사용이 불가능합니다.";
+                    msg = "This Email is not available.";
                 }
                 alert(msg);
             },
@@ -107,11 +107,11 @@ var api = {
             success: function(result){
                 let msg;
                 if(result === true){
-                    msg = "임시 비밀번호가 전송되었습니다.";
+                    msg = "A temporary password has been sent.";
                 }else if(result === false){
-                    msg = "입력한 값이 틀립니다.";
+                    msg = "The value entered is invalid.";
                 }else{
-                    msg = "입력된 값이 없습니다.";
+                    msg = "The value entered is invalid.";
                 }
                 alert(msg);
             },
